@@ -1,5 +1,6 @@
 package demoserver.com.example.plugins
 
+import demoserver.com.example.routes.CustomerRouting
 import io.ktor.http.ContentDisposition.Companion.File
 import io.ktor.http.content.*
 import io.ktor.server.application.*
@@ -10,9 +11,8 @@ import java.io.File
 
 fun Application.configureRouting() {
     routing {
-        get("/") {
-            call.respondText("Hello World!")
-        }
+
+        CustomerRouting()
     }
 
 }
