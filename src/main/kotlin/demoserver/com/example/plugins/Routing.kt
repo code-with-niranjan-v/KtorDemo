@@ -1,6 +1,7 @@
 package demoserver.com.example.plugins
 
 import demoserver.com.example.routes.CustomerRouting
+import demoserver.com.example.routes.htmlRouting
 import io.ktor.http.ContentDisposition.Companion.File
 import io.ktor.http.content.*
 import io.ktor.server.application.*
@@ -13,6 +14,7 @@ fun Application.configureRouting() {
     routing {
 
         CustomerRouting()
+        htmlRouting()
     }
 
 }
