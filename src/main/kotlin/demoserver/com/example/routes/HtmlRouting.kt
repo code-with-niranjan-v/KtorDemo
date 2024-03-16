@@ -53,7 +53,17 @@ fun Routing.htmlRouting(){
                     }
 
                 }
+
+                div(classes = "btn-container"){
+                    a(href = "/website2",){
+                        button(classes = "btn-next-page") {
+                            +"Next Page"
+                        }
+
+                    }
+                }
             }
+
         }
     }
 
@@ -79,6 +89,27 @@ fun Routing.htmlRouting(){
                 color = Color.white
                 fontSize = LinearDimension("20px")
                 margin = Margin(LinearDimension("12px"))
+            }
+            rule("button.btn-next-page"){
+                color = Color.white
+                backgroundColor = Color.orange
+                border = Border.none
+                borderRadius = LinearDimension("5px")
+                fontSize = LinearDimension("18px")
+                padding = Padding(LinearDimension("12px"))
+            }
+            rule("div.btn-container"){
+                textAlign = TextAlign.center
+            }
+        }
+    }
+
+    get("/website2"){
+        call.respondHtml {
+            body {
+                p{
+                    +"This is Website 2"
+                }
             }
         }
     }
